@@ -59,13 +59,13 @@ def menu():
         if menu_state == "easy 1":
                 pygame.mixer.music.load('menu/musica2.mp3')
                 pygame.mixer.music.play(-1)
-                nivel_1()
+                menu_state = nivel_1()
 
     #-----------------------HARD 1--------------------------
         if menu_state == "hard 1":
                 pygame.mixer.music.load('menu/musica2.mp3')
                 pygame.mixer.music.play(-1)
-                nivel_1_hard()
+                menu_state = nivel_1_hard()
                
     #-----------------------NIVEL 2--------------------------
         if menu_state == "nivel 2":
@@ -81,13 +81,13 @@ def menu():
         if menu_state == "easy 2":
                 pygame.mixer.music.load('menu/musica2.mp3')
                 pygame.mixer.music.play(-1)
-                nivel_2()
+                menu_state = nivel_2()
                 
     #-----------------------HARD 2--------------------------
         if menu_state == "hard 2":
                 pygame.mixer.music.load('menu/musica2.mp3')
                 pygame.mixer.music.play(-1)
-                nivel_2_hard()
+                menu_state = nivel_2_hard()
     
     #-----------------------NIVEL 3--------------------------
         if menu_state == "nivel 3":
@@ -103,13 +103,13 @@ def menu():
         if menu_state == "easy 3":
                 pygame.mixer.music.load('menu/musica2.mp3')
                 pygame.mixer.music.play(-1)
-                nivel_3()
+                menu_state = nivel_3()
             
     #-----------------------HARD 3--------------------------
         if menu_state == "hard 3":
                 pygame.mixer.music.load('menu/musica2.mp3')
                 pygame.mixer.music.play(-1)
-                nivel_3_hard()
+                menu_state = nivel_3_hard()
 
     #-----------------------OPCIONES-------------------------
         if menu_state == "settings":

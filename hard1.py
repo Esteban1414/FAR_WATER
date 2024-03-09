@@ -64,7 +64,7 @@ def nivel_1_hard():
             #definiendo cuantos frames son
             num_of_frames_1 = 3
             for i in range(num_of_frames_1):
-                img_1 = pygame.image.load(f'pruebas_pi/personaje/{personaje}/{animations_1}/{i}.png').convert_alpha()
+                img_1 = pygame.image.load(f'./personaje/{personaje}/{animations_1}/{i}.png').convert_alpha()
                 ll_w_1 = img_1.get_width()
                 ll_h_1 = img_1.get_height()
                 img_2 = pygame.transform.scale(img_1,(int(ll_w_1*1.4), int(ll_h_1*1.4)))
@@ -82,7 +82,7 @@ def nivel_1_hard():
             #definiendo cuantos frames son
             num_of_frames_2 = 4
             for i in range(num_of_frames_2):
-                img_2 = pygame.image.load(f'pruebas_pi/items/{item}/{animations_2}/{i}.png').convert_alpha()
+                img_2 = pygame.image.load(f'./items/{item}/{animations_2}/{i}.png').convert_alpha()
                 ll_w_2 = img_2.get_width()
                 ll_h_2 = img_2.get_height()
                 img_2 = pygame.transform.scale(img_2,(int(ll_w_2*.5), int(ll_h_2*.5)))
@@ -100,7 +100,7 @@ def nivel_1_hard():
             #definiendo cuantos frames son
             num_of_frames_3 = 7
             for i in range(num_of_frames_3):
-                img_3 = pygame.image.load(f'pruebas_pi/fondo/{rio}/{animations_3}/{i}.png').convert_alpha()
+                img_3 = pygame.image.load(f'./fondo/{rio}/{animations_3}/{i}.png').convert_alpha()
                 ll_w_3 = img_3.get_width()
                 ll_h_3 = img_3.get_height()
                 img_2 = pygame.transform.scale(img_3,(int(ll_w_3), int(ll_h_3)))
@@ -118,7 +118,7 @@ def nivel_1_hard():
             #definiendo cuantos frames son
             num_of_frames_4 = 4
             for i in range(num_of_frames_4):
-                img_4 = pygame.image.load(f'pruebas_pi/animals/{animals}/{animations_4}/{i}.png').convert_alpha()
+                img_4 = pygame.image.load(f'./animals/{animals}/{animations_4}/{i}.png').convert_alpha()
                 ll_w_4 = img_4.get_width()
                 ll_h_4 = img_4.get_height()
                 img_2 = pygame.transform.scale(img_4,(int(ll_w_4*.5), int(ll_h_4*.5)))
@@ -136,7 +136,7 @@ def nivel_1_hard():
             #definiendo cuantos frames son
             num_of_frames_5 = 5
             for i in range(num_of_frames_5):
-                img_5 = pygame.image.load(f'pruebas_pi/extra/{extras}/{animations_5}/{i}.png').convert_alpha()
+                img_5 = pygame.image.load(f'./extra/{extras}/{animations_5}/{i}.png').convert_alpha()
                 ll_w_5 = img_5.get_width()
                 ll_h_5 = img_5.get_height()
                 img_2 = pygame.transform.scale(img_5,(int(ll_w_5*.5), int(ll_h_5*.5)))
@@ -154,7 +154,7 @@ def nivel_1_hard():
             #definiendo cuantos frames son
             num_of_frames_6 = 4
             for i in range(num_of_frames_6):
-                img_6 = pygame.image.load(f'pruebas_pi/extra_2/{extras_2}/{animations_6}/{i}.png').convert_alpha()
+                img_6 = pygame.image.load(f'./extra_2/{extras_2}/{animations_6}/{i}.png').convert_alpha()
                 ll_w_6 = img_6.get_width()
                 ll_h_6 = img_6.get_height()
                 img_2 = pygame.transform.scale(img_6,(int(ll_w_6*.5), int(ll_h_6*.5)))
@@ -172,7 +172,7 @@ def nivel_1_hard():
             #definiendo cuantos frames son
             num_of_frames_7 = 2
             for i in range(num_of_frames_7):
-                img_7 = pygame.image.load(f'pruebas_pi/fondo/{boat}/{animations_7}/{i}.png').convert_alpha()
+                img_7 = pygame.image.load(f'./fondo/{boat}/{animations_7}/{i}.png').convert_alpha()
                 ll_w_7 = img_7.get_width()
                 ll_h_7 = img_7.get_height()
                 img_2 = pygame.transform.scale(img_7,(int(ll_w_7*4), int(ll_h_7*3.5)))
@@ -190,7 +190,7 @@ def nivel_1_hard():
             #definiendo cuantos frames son
             num_of_frames_8 = 16
             for i in range(num_of_frames_8):
-                img_8 = pygame.image.load(f'pruebas_pi/extra_3/{extras_3}/{animations_8}/{i}.png').convert_alpha()
+                img_8 = pygame.image.load(f'./extra_3/{extras_3}/{animations_8}/{i}.png').convert_alpha()
                 ll_w_8 = img_8.get_width()
                 ll_h_8 = img_8.get_height()
                 img_2 = pygame.transform.scale(img_8,(int(ll_w_8*1), int(ll_h_8*1)))
@@ -208,7 +208,7 @@ def nivel_1_hard():
             #definiendo cuantos frames son
             num_of_frames_9 = 1
             for i in range(num_of_frames_9):
-                img_9 = pygame.image.load(f'pruebas_pi/extra/{net}/{animations_9}/{i}.png').convert_alpha()
+                img_9 = pygame.image.load(f'./extra/{net}/{animations_9}/{i}.png').convert_alpha()
                 ll_w_9 = img_9.get_width()
                 ll_h_9 = img_9.get_height()
                 img_2 = pygame.transform.scale(img_9,(int(ll_w_9*.8), int(ll_h_9*.8)))
@@ -254,6 +254,11 @@ def nivel_1_hard():
         pygame.event.set_allowed([QUIT, KEYDOWN, KEYUP])
 
         win_lose = WIN_LOSE()
+        if win_lose == 0:
+            ventana.blit(game_over,(0,0))
+
+        if win_lose == 1:
+            return "niveles"
         #create items
         #check if max of enemy has been reached
         if len(items_group) < MAX_ITEMS:
